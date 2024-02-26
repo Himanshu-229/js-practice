@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation </title>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addlang(langname){
+      const li = document.createElement('li')
+      li.innerHTML = `${langname}` // inner html se pura tree treverse hoga
+      document.querySelector('.language').
+      appendChild(li)
+    }
+    addlang("python")
+    addlang('java')
+    function addoptlang(langname){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(`${langname}`)) // optimezed way to create element
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addoptlang('golang')
+
+    // Edit 
+
+const secondli = document.querySelector('li:nth-child(2)')
+// newli.innerHTML = "mojo"
+const newli = document.createElement('li')
+newli.textContent = "mojo"
+secondli.replaceWith(newli)
+
+// remove
+
+const lastlang = document.querySelector('li:last-child')
+// console.log(lastlang);
+lastlang.remove();
+
+</script>
+</html>
