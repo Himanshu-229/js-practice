@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async and Sync</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const msg = ()=>{
+        console.log('Hello World');
+    }
+    const change = ()=>{
+        document.querySelector('h1').innerHTML = 'change my self'
+    }
+     
+    const timeout = setTimeout(change,3000)
+    document.querySelector('#stop').addEventListener('click',()=>{
+       clearTimeout(timeout)
+        console.log('Stoped')
+          
+    })
+</script>
+</html>
